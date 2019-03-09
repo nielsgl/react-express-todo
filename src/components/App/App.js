@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Admin, Resource, ListGuesser } from 'react-admin';
+import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 
 import './App.css';
@@ -10,8 +10,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<Admin dataProvider={dataProvider}>
-				<Resource name="users" list={ListGuesser} />
-				<Resource name="todos" list={ListGuesser} />
+				<Resource name="users" list={ListGuesser} edit={EditGuesser} />
+				<Resource name="todos" list={ListGuesser} edit={EditGuesser} />
 			</Admin>
 		);
 	}
