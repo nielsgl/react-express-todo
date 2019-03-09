@@ -67,6 +67,9 @@ typings/
 # next.js build output
 .next
 
+# database
+db.*.sqlite
+
 # misc
 .DS_Store
 .env.local
