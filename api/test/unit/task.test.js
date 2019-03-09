@@ -1,27 +1,26 @@
 const expect = require('expect.js');
 
-describe('models/task', function() {
-	before(function() {
+describe('models/task', () => {
+	before(() => {
 		return require('../../models').sequelize.sync();
 	});
 
-	beforeEach(function() {
+	beforeEach(() => {
 		this.User = require('../../models').User;
 		this.Task = require('../../models').Task;
 	});
 
-	describe('create', function() {
-		it('creates a task', function() {
-			return this.User.create({ username: 'johndoe' })
+	describe('create', () => {
+		it('creates a task', () =>
+			this.User.create({ username: 'johndoe' })
 				.bind(this)
-				.then(function(user) {
-					return this.Task.create({
+				.then(user =>
+					this.Task.create({
 						title: 'a title',
 						UserId: user.id,
-					}).then(function(task) {
+					}).then(task => {
 						expect(task.title).to.equal('a title');
-					});
-				});
-		});
+					}),
+				));
 	});
 });

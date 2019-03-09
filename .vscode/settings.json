@@ -2,8 +2,8 @@
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"prettier.jsxBracketSameLine": true,
-	"eslint.packageManager": "yarn",
-	"eslint.provideLintTask": true,
 	"eslint.autoFixOnSave": true,
-	"eslint.run": "onSave"
+	"eslint.run": "onSave",
+	"eslint.alwaysShowStatus": true,
+	"eslint.enable": true
 }

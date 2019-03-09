@@ -3,8 +3,8 @@ const Bluebird = require('bluebird');
 // const expect = require('expect.js');
 const request = require('supertest');
 
-describe('user creation page', function() {
-	before(function() {
+describe('user creation page', () => {
+	before(() => {
 		return require('../../models').sequelize.sync();
 	});
 
@@ -17,14 +17,14 @@ describe('user creation page', function() {
 		]);
 	});
 
-	it('loads correctly', function(done) {
+	it('loads correctly', done => {
 		request(app)
 			.get('/')
 			.expect(200, done);
 	});
 
 	it.skip('lists a user if there is one', function(done) {
-		this.models.User.create({ username: 'johndoe' }).then(function() {
+		this.models.User.create({ username: 'johndoe' }).then(() => {
 			request(app)
 				.get('/')
 				.expect(/johndoe/, done);
@@ -40,7 +40,7 @@ describe('user creation page', function() {
 					UserId: user.id,
 				});
 			})
-			.then(function() {
+			.then(() => {
 				request(app)
 					.get('/')
 					.expect(/johndoe task/, done);
