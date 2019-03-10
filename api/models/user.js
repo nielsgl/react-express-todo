@@ -1,7 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
-	const User = sequelize.define('User', {
-		username: DataTypes.STRING,
-	});
+	const User = sequelize.define(
+		'User',
+		{
+			username: DataTypes.STRING,
+		},
+		{ underscored: true },
+	);
 
 	User.associate = models => {
 		models.User.hasMany(models.Task);
