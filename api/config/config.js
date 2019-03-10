@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+
 module.exports = {
 	development: {
 		dialect: 'sqlite',
