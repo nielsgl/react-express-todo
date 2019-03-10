@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
 	});
 
 	// debug('[GET /users] users: ', users);
-	res.set('X-Total-Count', 1).json(users);
+	res.set('X-Total-Count', users.length).json(users);
 });
 
 /* GET users/:id listing. */
