@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
 				defaultValue: false,
 			},
 		},
-		{ underscored: true },
+		{
+			underscored: true,
+		},
 	);
 
 	Task.associate = models => {

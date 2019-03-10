@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
 		attributes: ['id', 'title', 'is_done'],
 	});
 
-	debug('[GET /tasks] tasks: ', tasks);
+	// debug('[GET /tasks] tasks: ', tasks);
 	res.set('X-Total-Count', tasks.length).json(tasks);
 });
 
