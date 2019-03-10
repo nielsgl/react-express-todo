@@ -1,9 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
 	const Task = sequelize.define('Task', {
-		title: DataTypes.STRING,
+		title: { type: DataTypes.STRING, allowNull: false },
+		isDone: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+			defaultValue: false,
+		},
 	});
 
-	Task.associate = function(models) {
+	Task.associate = models => {
 		models.Task.belongsTo(models.User, {
 			onDelete: 'CASCADE',
 			foreignKey: {
