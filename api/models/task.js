@@ -1,12 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-	const Task = sequelize.define('Task', {
-		title: { type: DataTypes.STRING, allowNull: false },
-		isDone: {
-			type: DataTypes.BOOLEAN,
-			allowNull: false,
-			defaultValue: false,
+	const Task = sequelize.define(
+		'Task',
+		{
+			title: { type: DataTypes.STRING, allowNull: false },
+			is_done: {
+				type: DataTypes.BOOLEAN,
+				allowNull: false,
+				defaultValue: false,
+			},
 		},
-	});
+		{ underscored: true },
+	);
 
 	Task.associate = models => {
 		models.Task.belongsTo(models.User, {

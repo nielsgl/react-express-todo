@@ -9,11 +9,11 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
 	const tasks = await models.Task.findAll({
 		include: [models.User],
-		attributes: ['id', 'title', 'isDone'],
+		attributes: ['id', 'title', 'is_done'],
 	});
 
 	debug('[GET /tasks] tasks: ', tasks);
-	res.set('X-Total-Count', 1).json(tasks);
+	res.set('X-Total-Count', tasks.length).json(tasks);
 });
 
 /* GET tasks/:id listing. */
@@ -23,7 +23,7 @@ router.get('/:id', async (req, res, next) => {
 	const task = await models.Task.findOne({
 		where: { id },
 		include: [models.User],
-		attributes: ['id', 'title', 'isDone'],
+		attributes: ['id', 'title', 'is_done'],
 	});
 
 	res.set('X-Total-Count', 1).json(task);
