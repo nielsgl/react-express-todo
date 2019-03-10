@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 		username: DataTypes.STRING,
 	});
 
-	User.associate = function(models) {
+	User.associate = models => {
 		models.User.hasMany(models.Task);
 	};
 
