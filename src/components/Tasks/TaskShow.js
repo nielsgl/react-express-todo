@@ -18,7 +18,7 @@ const TaskShow = props => {
 					<TextField source="username" />
 				</ReferenceField>
 				<TextField source="title" />
-				<BooleanField source="isDone" />
+				<BooleanField source="is_done" />
 				{/* <NumberField source="User.id" /> */}
 			</SimpleShowLayout>
 		</Show>

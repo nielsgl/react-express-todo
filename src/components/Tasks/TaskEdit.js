@@ -15,11 +15,11 @@ const TaskEdit = props => {
 		<Edit {...props}>
 			<SimpleForm>
 				<DisabledInput source="id" />
-				<ReferenceInput source="UserId" reference="users">
+				<ReferenceInput source="user_id" reference="users">
 					<SelectInput optionText="username" />
 				</ReferenceInput>
 				<TextInput source="title" />
-				<BooleanInput source="isDone" />
+				<BooleanInput source="is_done" />
 				{/* <NumberField source="User.id" /> */}
 			</SimpleForm>
 		</Edit>

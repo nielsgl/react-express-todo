@@ -18,7 +18,7 @@ const TaskList = props => {
 
 				<TextField source="id" />
 				<TextField source="title" />
-				<BooleanField source="isDone" />
+				<BooleanField source="is_done" />
 				{/* <NumberField source="User.id" /> */}
 			</Datagrid>
 		</List>
